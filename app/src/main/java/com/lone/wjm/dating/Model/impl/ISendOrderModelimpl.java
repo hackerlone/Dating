@@ -45,6 +45,7 @@ public class ISendOrderModelimpl implements ISendOrderModel {
             yueDan.put("yshijian", yshijian);
             yueDan.put("ydidian", ydidian);
             yueDan.put("ybeizhu", ybeizhu);
+            yueDan.put("zhuangtai", "待接受");
             yueDan.put("userObjectId", userObjectId);
             yueDan.saveInBackground(new SaveCallback() {// 保存到服务端
                 @Override
