@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:background="@drawable/footbar_bg">
+
+        <TextView
+            android:id="@+id/tv_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="约单"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_text_size"/>
+
+        <LinearLayout
+            android:id="@+id/ll_find_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10.0dip">
+
+            <TextView
+                android:id="@+id/tv_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="北京"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_text_size_small"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10.0dip"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerInside"
+                android:src="@drawable/down"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_home_select"
+            android:layout_width="wrap_content"
+            android:layout_height="20.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:clickable="true"
+            android:src="@drawable/select"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="180.0dip"
+        android:background="@drawable/home_banner_bg"
+        android:scaleType="fitXY">
+
+        <Gallery
+            android:id="@+id/gallery"
+            android:layout_width="fill_parent"
+            android:layout_height="120.0dip"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10.0dip"
+        android:background="@drawable/white_big_bg">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30.0dip"
+                    android:layout_marginTop="15.0dip"
+                    android:src="@drawable/purple_line"/>
+
+                <ImageView
+                    android:id="@+id/civ_home_head"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:src="@drawable/yt_qqact"
+                  />
+
+                <TextView
+                    android:id="@+id/tv_home_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5.0dip"
+                    android:layout_toRightOf="@id/civ_home_head"
+                    android:text=""
+                    android:textSize="16.0sp"/>
+
+                <ImageView
+                    android:id="@+id/iv_home_sex"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_toRightOf="@id/tv_home_name"
+                    android:src="@drawable/girl"/>
+
+                <TextView
+                    android:id="@+id/iv_home_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6.0dip"
+                    android:layout_toRightOf="@id/iv_home_sex"
+                    android:text=""
+                    android:textSize="14.0sp"/>
+
+                <TextView
+                    android:id="@+id/tv_home_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_home_name"
+                    android:layout_margin="5.0dip"
+                    android:layout_toRightOf="@id/civ_home_head"
+                    android:text=""
+                    android:textSize="12.0sp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="2.0dip">
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_margin="2.0dip"
+                    android:src="@drawable/duixiang"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margintop_svprogresshuddefault_msg"
+                    android:text="约吃对象："
+                    android:textSize="12.0sp"/>
+
+                <TextView
+                    android:id="@+id/tv_home_date_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12.0sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="2.0dip">
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_margin="2.0dip"
+                    android:src="@drawable/yuechi"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margintop_svprogresshuddefault_msg"
+                    android:text="约吃方式："
+                    android:textSize="12.0sp"/>
+
+                <TextView
+                    android:id="@+id/tv_home_date_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/theme"
+                    android:textSize="12.0sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="2.0dip">
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_margin="2.0dip"
+                    android:src="@drawable/chihe"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margintop_svprogresshuddefault_msg"
+                    android:text="我要吃喝："
+                    android:textSize="12.0sp"/>
+
+                <TextView
+                    android:id="@+id/tv_home_date_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12.0sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="2.0dip">
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_margin="2.0dip"
+                    android:src="@drawable/chefei"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margintop_svprogresshuddefault_msg"
+                    android:text="报销车费："
+                    android:textSize="12.0sp"/>
+
+                <TextView
+                    android:id="@+id/tv_home_date_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/orange"
+                    android:textSize="12.0sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="2.0dip">
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_margin="2.0dip"
+                    android:src="@drawable/shijian"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margintop_svprogresshuddefault_msg"
+                    android:text="约吃时间："
+                    android:textSize="12.0sp"/>
+
+                <TextView
+                    android:id="@+id/tv_home_date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12.0sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="2.0dip">
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_margin="2.0dip"
+                    android:src="@drawable/didian"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margintop_svprogresshuddefault_msg"
+                    android:text="约吃地点："
+                    android:textSize="12.0sp"/>
+
+                <TextView
+                    android:id="@+id/tv_home_date_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textSize="12.0sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="2.0dip">
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_margin="2.0dip"
+                    android:src="@drawable/beizhu"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margintop_svprogresshuddefault_msg"
+                    android:text="备注说明："
+                    android:textSize="12.0sp"/>
+
+                <TextView
+                    android:id="@+id/tv_home_date_ext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textSize="12.0sp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/tv_home_receive_order"
+                android:layout_width="150.0dip"
+                android:layout_height="30.0dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/theme_btn_bg"
+                android:onClick="receive"
+                android:text="我要抢单"
+                android:textColor="@color/white"
+                android:textSize="14.0sp"/>
+        </LinearLayout>
+    </ScrollView>
+    <!--<ProgressBar-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:visibility="visible"-->
+        <!--android:indeterminateDrawable="@drawable/progress_small"/>-->
+</LinearLayout>

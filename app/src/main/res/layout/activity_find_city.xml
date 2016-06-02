@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_login_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:background="@drawable/footbar_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="城市选择"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_text_size"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="25.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dip"
+            android:background="@android:color/transparent"
+            android:drawableBottom="@null"
+            android:drawableLeft="@drawable/white_left"
+            android:drawableTop="@null"
+            android:gravity="center_vertical"
+            android:onClick="back"
+            android:padding="5.0dip"
+            android:text=" 返回"
+            android:textColor="@color/white"
+            android:textSize="11.0sp"/>
+    </RelativeLayout>
+
+    <com.lone.wjm.dating.Util.SideBar.ClearEditText
+        android:id="@+id/filter_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="35.0dip"
+        android:layout_margin="5.0dip"
+        android:background="@drawable/sorlistview_search_bar_edit_normal"
+        android:drawableLeft="@drawable/sorlistview_search_bar_icon_normal"
+        android:hint="请输入关键字"
+        android:padding="10.0dip"
+        android:singleLine="true"
+        android:textSize="11.0sp"/>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ListView
+            android:id="@+id/country_lvcountry"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:divider="@null"/>
+        <TextView
+            android:id="@+id/dialog"
+            android:layout_width="80.0dip"
+            android:layout_height="80.0dip"
+            android:layout_gravity="center"
+            android:background="@drawable/theme_btn_bg"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="30.0dip"
+            android:visibility="invisible"/>
+
+        <com.lone.wjm.dating.Util.SideBar.SideBar
+            android:id="@+id/sidrbar"
+            android:layout_width="20.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center|right"/>
+    </FrameLayout>
+</LinearLayout>

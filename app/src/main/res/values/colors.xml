@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="theme">#ff7f59ab</color>
+    <color name="grey">#ff666666</color>
+    <color name="orange">#fffeab40</color>
+    <color name="none_color">#00000000</color>
+    <color name="albumback">#ffe1e0de</color>
+    <color name="bgColor_overlay">#60000000</color>
+    <color name="bgColor_overlay_black">#95000000</color>
+    <color name="bgColor_svprogressdefaultview">@android:color/white</color>
+    <color name="textColor_svprogresshuddefault_msg">#ff000000</color>
+    <color name="roundColor_svprogresshuddefault">#ffe5e5e5</color>
+    <color name="roundProgressColor_svprogresshuddefault">@android:color/black</color>
+    <color name="main_bottom_text_selector">#ffe5e5e5</color>
+
+</resources>

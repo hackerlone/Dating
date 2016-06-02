@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup
+        android:id="@+id/rg_content_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="60.0dip"
+        android:background="@drawable/footbar_bg"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_content_fragment_home"
+            style="@style/main_bottom_style"
+            android:drawableTop="@drawable/footbar_date_selector"
+            android:text="约单"/>
+        <RadioButton
+            android:id="@+id/rb_content_fragment_order"
+            style="@style/main_bottom_style"
+            android:drawableTop="@drawable/footbar_order_selector"
+            android:text="订单"/>
+        <RadioButton
+            android:id="@+id/rb_content_fragment_food"
+            style="@style/main_bottom_style"
+            android:checked="true"
+            android:drawableTop="@drawable/footbar_food_selector"
+            android:text="美食汇"/>
+        <RadioButton
+            android:id="@+id/rb_content_fragment_contacts"
+            style="@style/main_bottom_style"
+            android:drawableTop="@drawable/footbar_contacts_selector"
+            android:text="通讯录"/>
+        <RadioButton
+            android:id="@+id/rb_content_fragment_mine"
+            style="@style/main_bottom_style"
+            android:drawableTop="@drawable/footbar_mine_selector"
+            android:text="我的"/>
+    </RadioGroup>
+</LinearLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_login_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:background="@drawable/footbar_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="筛选"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_text_size"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="25.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dip"
+            android:background="@android:color/transparent"
+            android:drawableBottom="@null"
+            android:drawableLeft="@drawable/white_left"
+            android:drawableTop="@null"
+            android:gravity="center_vertical"
+            android:onClick="back"
+            android:padding="5.0dip"
+            android:text=" 返回"
+            android:textColor="@color/white"
+            android:textSize="12.0sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="10.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当前城市："/>
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:text="北京"
+                android:textColor="@color/grey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="10.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="约会对象："/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_man"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/check_selector"
+                    android:drawablePadding="5.0dip"
+                    android:text="男"
+                    android:textColor="@color/grey"
+                    android:textSize="14.0sp"/>
+
+                <RadioButton
+                    android:id="@+id/rb_woman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/check_selector"
+                    android:drawablePadding="5.0dip"
+                    android:text="女"
+                    android:textColor="@color/grey"
+                    android:textSize="14.0sp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="10.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="约会方式："/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_mode1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/check_selector"
+                    android:drawablePadding="5.0dip"
+                    android:text="我请客"
+                    android:textColor="@color/grey"
+                    android:textSize="14.0sp"/>
+
+                <RadioButton
+                    android:id="@+id/rb_mode2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/check_selector"
+                    android:drawablePadding="5.0dip"
+                    android:text="对方请客"
+                    android:textColor="@color/grey"
+                    android:textSize="14.0sp"/>
+
+                <RadioButton
+                    android:id="@+id/rb_mode3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/check_selector"
+                    android:drawablePadding="5.0dip"
+                    android:text="AA制"
+                    android:textColor="@color/grey"
+                    android:textSize="14.0sp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="10.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="约会时间："/>
+
+            <EditText
+                android:id="@+id/et_filter_time"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="点击选择时间"
+                android:inputType="none"
+                android:textColor="@color/grey"
+                android:textSize="14.0sp"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="200.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20.0dip"
+            android:background="@drawable/theme_btn_bg"
+            android:onClick="confirm"
+            android:padding="10.0dip"
+            android:text="确认"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</LinearLayout>
