@@ -50,7 +50,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="订单描述："/>
+                android:text="约单描述："/>
 
             <EditText
                 android:id="@+id/et_order_title"
