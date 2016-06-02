@@ -1,13 +1,12 @@
 package com.lone.wjm.dating.Ui.activity;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -17,6 +16,8 @@ import com.lone.wjm.dating.Application.MyApplication;
 import com.lone.wjm.dating.Prosenter.SendOrderProsenter;
 import com.lone.wjm.dating.R;
 import com.lone.wjm.dating.Ui.ISendOrderView;
+import com.lone.wjm.dating.Util.DateTime.DateTimePickDialogUtil;
+import com.lone.wjm.dating.Util.DateTime.DateUtil;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -44,8 +45,10 @@ public class SendOrder_Activity extends Activity implements View.OnClickListener
     private String sex;
     private String fangshi;
     private SendOrderProsenter mSendProsenter;
+    private StringBuffer sb = new StringBuffer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_picker);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_order);
         initView();
@@ -86,7 +89,7 @@ public class SendOrder_Activity extends Activity implements View.OnClickListener
     }
 
     //TODO  提交生成约单
-    public void confirm(View v) {
+    public void saveYuedan() {
         String ysex = sex;
         String yfangshi = fangshi;
         String ymiaoshu = et_order_title.getText().toString();
@@ -108,8 +111,27 @@ public class SendOrder_Activity extends Activity implements View.OnClickListener
         yueDanmap.put("userObjectId",userObjectId);
         mSendProsenter = new SendOrderProsenter(this);
         mSendProsenter.sendOrder(yueDanmap);
-
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.et_filter_time:
+                DateTimePickDialogUtil dateTimePicker=new DateTimePickDialogUtil(
+                        SendOrder_Activity.this, DateUtil.getCurrentDateAndTime());
+                dateTimePicker.dateTimePickDialog(et_filter_time);
+                break;
+            case R.id.btn_confirm:
+                saveYuedan();
+                break;
+        }
+    }
+
+    public void back(View v) {
+        finish();
+    }
+
+
 
     private void initView() {
         rl_login_title = (RelativeLayout) findViewById(R.id.rl_login_title);
@@ -125,36 +147,6 @@ public class SendOrder_Activity extends Activity implements View.OnClickListener
         et_filter_time.setOnClickListener(this);
         btn_confirm.setOnClickListener(this);
     }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.et_filter_time:
-                showDialog().show();
-                break;
-        }
-    }
-
-    public void back(View v) {
-        finish();
-    }
-
-    public Dialog showDialog() {
-        c = Calendar.getInstance();
-        dialog = new DatePickerDialog(
-                this,
-                new DatePickerDialog.OnDateSetListener() {
-                    public void onDateSet(DatePicker dp, int year, int month, int dayOfMonth) {
-                        et_filter_time.setText(year + "年" + (month + 1) + "月" + dayOfMonth + "日");
-                    }
-                },
-                c.get(Calendar.YEAR), // 传入年份
-                c.get(Calendar.MONTH), // 传入月份
-                c.get(Calendar.DAY_OF_MONTH)// 传入天数
-        );
-        return dialog;
-    }
-
     @Override
     public void sendOrder(boolean isSend) {
 

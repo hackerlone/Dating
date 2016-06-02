@@ -310,8 +310,8 @@
             android:layout_height="40.0dip"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20.0dip"
+            android:clickable="true"
             android:background="@drawable/theme_btn_bg"
-            android:onClick="confirm"
             android:padding="5.0dip"
             android:text="确认"
             android:textColor="@color/white"/>

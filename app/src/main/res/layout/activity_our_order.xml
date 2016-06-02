@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@id/rl_login_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:background="@drawable/footbar_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="我的订单"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_text_size"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="25.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dip"
+            android:background="@android:color/transparent"
+            android:drawableBottom="@null"
+            android:drawableLeft="@drawable/white_left"
+            android:drawableTop="@null"
+            android:gravity="center_vertical"
+            android:onClick="back"
+            android:padding="5.0dip"
+            android:text=" 返回"
+            android:textColor="@color/white"
+            android:textSize="12.0sp"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ListView
+            android:id="@+id/lv_our_order"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="您还没有订单..."
+            android:visibility="gone"/>
+    </FrameLayout>
+</LinearLayout>

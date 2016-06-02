@@ -41,4 +41,5 @@ dependencies {
     compile files('libs/weibo.sdk.android.sso.3.0.1-leancloud.jar')
     compile files('libs/avoscloud-sns-v3.13.12.jar')
     compile files('libs/universal-image-loader-1.9.0.jar')
+    compile files('libs/joda-time-2.9.3.jar')
 }
