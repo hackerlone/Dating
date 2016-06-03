@@ -30,8 +30,9 @@
         <activity android:name=".Ui.activity.Register_Activity"></activity>
         <activity android:name=".Ui.activity.Filter_Activity"></activity>
         <activity android:name=".Ui.activity.MineInfo_Activity"></activity>
-        <activity android:name=".Ui.activity.SendOrder_Activity"></activity>
         <activity android:name=".Ui.activity.MyOrderActivity"></activity>
+        <activity android:name=".Ui.activity.SendOrder_Activity"></activity>
+        <activity android:name=".Ui.activity.OrderDetailActivity"></activity>
 
 
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">

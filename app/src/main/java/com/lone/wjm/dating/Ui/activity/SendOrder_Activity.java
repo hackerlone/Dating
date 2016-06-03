@@ -95,7 +95,7 @@ public class SendOrder_Activity extends Activity implements View.OnClickListener
         String yxiaofei = et_order_amount.getText().toString();
         String ychefei = et_order_tip.getText().toString();
         String yshijian = et_filter_time.getText().toString();
-        String ydidian = et_filter_time.getText().toString();
+        String ydidian = et_date_location.getText().toString();
         String ybeizhu = et_date_remark.getText().toString();
         String userObjectId = sp.getString("objectId","null");
         Map<String,String> yueDanmap = new HashMap<String, String>();

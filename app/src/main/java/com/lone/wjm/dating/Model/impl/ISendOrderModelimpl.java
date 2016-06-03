@@ -42,6 +42,7 @@ public class ISendOrderModelimpl implements ISendOrderModel {
             yueDan.put("yfangshi", yfangshi);
             yueDan.put("yxiaofei", yxiaofei);
             yueDan.put("ychefei", ychefei);
+            yueDan.put("ysex", ysex);
             yueDan.put("yshijian", yshijian);
             yueDan.put("ydidian", ydidian);
             yueDan.put("ybeizhu", ybeizhu);

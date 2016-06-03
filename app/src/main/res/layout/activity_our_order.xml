@@ -38,18 +38,18 @@
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
-
         <ListView
             android:id="@+id/lv_our_order"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"/>
 
         <TextView
+            android:id="@+id/nullYuedan"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@color/white"
+            android:background="@color/theme"
             android:gravity="center"
-            android:text="您还没有订单..."
+            android:text="您还没有约单..."
             android:visibility="gone"/>
     </FrameLayout>
 </LinearLayout>
