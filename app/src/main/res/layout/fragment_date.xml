@@ -29,7 +29,6 @@
                 android:id="@+id/tv_city_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="北京"
                 android:textColor="@color/white"
                 android:textSize="@dimen/title_text_size_small"/>
 
@@ -58,11 +57,15 @@
         android:background="@drawable/home_banner_bg"
         android:scaleType="fitXY">
 
-        <Gallery
-            android:id="@+id/gallery"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="fill_parent"
-            android:layout_height="120.0dip"
+            android:layout_height="150.0dip"
+            android:layout_centerVertical="true"
+            android:scrollbars="none"
             android:layout_centerInParent="true"/>
+
+
     </RelativeLayout>
 
     <ScrollView
@@ -210,7 +213,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margintop_svprogresshuddefault_msg"
-                    android:text="我要吃喝："
+                    android:text="约会主题："
                     android:textSize="12.0sp"/>
 
                 <TextView

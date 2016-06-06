@@ -33,6 +33,7 @@ public class MyApplication extends Application {
         AVOSCloud.initialize(this, "HlwakbmtCWWz0rPxfiMbO3LU-gzGzoHsz", "JGAio8Hc4KgcmX9BqPPBEbWy");
         sp = getSharedPreferences("DatingInfo",MODE_PRIVATE);
         mEditor = sp.edit();
+
         mRequestQueue = Volley.newRequestQueue(this);
 
         // 配置缓存路径
@@ -42,7 +43,7 @@ public class MyApplication extends Application {
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
                 this)
                 // max width, max,height，即保存的每个缓存文件的最大长宽
-                 .memoryCacheExtraOptions(400, 400)
+                 .memoryCacheExtraOptions(300, 300)
                 // 线程池内加载的数量
                 .threadPoolSize(3)
                 // 线程优先级

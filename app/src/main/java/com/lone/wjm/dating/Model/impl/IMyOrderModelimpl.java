@@ -10,6 +10,10 @@ import com.avos.avoscloud.FindCallback;
 import com.lone.wjm.dating.Model.IMyOrderModel;
 import com.lone.wjm.dating.Ui.IMyOrderView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -34,7 +38,7 @@ public class IMyOrderModelimpl implements IMyOrderModel {
         //TODO 获取我的约单信息
         list = new ArrayList<Map<String, String>>();
         final AVQuery<AVObject> priorityQuery = new AVQuery<>("YueDan");
-        priorityQuery.whereGreaterThanOrEqualTo("objectId", objectId);
+        priorityQuery.whereEqualTo("TouserObjectId", objectId);
         final AVQuery<AVObject> statusQuery = new AVQuery<>("YueDan");
         statusQuery.whereEqualTo("userObjectId", objectId);
         AVQuery<AVObject> query = AVQuery.or(Arrays.asList(priorityQuery, statusQuery));
@@ -42,25 +46,30 @@ public class IMyOrderModelimpl implements IMyOrderModel {
             @Override
             public void done(List<AVObject> list1, AVException e) {
                 if (e == null) {
-                    for (int i = 0; i < list1.size(); i++) {
-                        Map<String, String> map = new HashMap<String, String>();
-                        map.put("objectId",list1.get(i).getString("objectId"));
-                        map.put("userObjectId",list1.get(i).getString("userObjectId"));
-                        map.put("TouserObjectId",list1.get(i).getString("TouserObjectId"));
-                        map.put("ymiaoshu",list1.get(i).getString("ymiaoshu"));
-                        map.put("ydidian",list1.get(i).getString("ydidian"));
-                        map.put("yshijian",list1.get(i).getString("yshijian"));
-                        map.put("yxiaofei",list1.get(i).getString("yxiaofei"));
-                        map.put("ysex",list1.get(i).getString("ysex"));
-                        map.put("ychefei",list1.get(i).getString("ychefei"));
-                        map.put("yfangshi",list1.get(i).getString("yfangshi"));
-                        map.put("ybeizhu",list1.get(i).getString("ybeizhu"));
-                        map.put("zhuangtai",list1.get(i).getString("zhuangtai"));
-                        list.add(map);
-                        Message msg = new Message();
-                        msg.obj = list;
-                        mHandler.sendMessage(msg);
-
+                    try {
+                        JSONArray array = new JSONArray(list1.toString());
+                        for (int i = 0; i < list1.size(); i++) {
+                            Map<String, String> map = new HashMap<String, String>();
+                            JSONObject json  = array.getJSONObject(i);
+                            map.put("objectId", json.getString("objectId"));
+                            map.put("userObjectId", list1.get(i).getString("userObjectId"));
+                            map.put("TouserObjectId", list1.get(i).getString("TouserObjectId"));
+                            map.put("ymiaoshu", list1.get(i).getString("ymiaoshu"));
+                            map.put("ydidian", list1.get(i).getString("ydidian"));
+                            map.put("yshijian", list1.get(i).getString("yshijian"));
+                            map.put("yxiaofei", list1.get(i).getString("yxiaofei"));
+                            map.put("ysex", list1.get(i).getString("ysex"));
+                            map.put("ychefei", list1.get(i).getString("ychefei"));
+                            map.put("yfangshi", list1.get(i).getString("yfangshi"));
+                            map.put("ybeizhu", list1.get(i).getString("ybeizhu"));
+                            map.put("zhuangtai", list1.get(i).getString("zhuangtai"));
+                            list.add(map);
+                            Message msg = new Message();
+                            msg.obj = list;
+                            mHandler.sendMessage(msg);
+                        }
+                    } catch (JSONException e1) {
+                        e1.printStackTrace();
                     }
                 } else {
                     mIMyOrderView.showToastMessage("查询失败，请检查网络连接");

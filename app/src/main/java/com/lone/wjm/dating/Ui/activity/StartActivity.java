@@ -2,6 +2,7 @@ package com.lone.wjm.dating.Ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,6 +10,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
+import com.lone.wjm.dating.Application.MyApplication;
 import com.lone.wjm.dating.R;
 
 /**
@@ -19,11 +21,17 @@ public class StartActivity extends Activity {
     private ImageView img;
     Animation animation;
     private Handler mHandler;
+    private SharedPreferences sp;
+    private SharedPreferences.Editor mEditor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_satrt);
         img = (ImageView) findViewById(R.id.startimg);
+
+        sp = ((MyApplication)getApplication()).getSp();
+        mEditor = ((MyApplication)getApplication()).getEditor();
+
         //透明度变化 0.0是透明 1.0是最清晰  float单位
         animation = new AlphaAnimation(0.0f, 1.0f);
         //是否处于停留状态
@@ -51,8 +59,15 @@ public class StartActivity extends Activity {
             public void handleMessage(Message msg) {
 //                super.handleMessage(msg);
                 if (msg.what==1){
+                    if(!sp.getBoolean("isfirst",false)){
                     startActivity(new Intent(StartActivity.this,StartTowActivity.class));
+                        mEditor.putBoolean("isfirst",true);
+                        mEditor.commit();
                     finish();
+                    }else{
+                        startActivity(new Intent(StartActivity.this,MainActivity.class));
+                        finish();
+                    }
                 }
             }
         };

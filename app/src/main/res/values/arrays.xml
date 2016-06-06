@@ -46,6 +46,8 @@
         <item>~夏先生</item>
     </string-array>
 <string-array name="citys">
+    <item>北京</item>
+    <item>重庆</item>
     <item>通州</item>
     <item>房山</item>
     <item>昌平</item>

@@ -88,12 +88,13 @@ public class MyOrderAdapter extends BaseAdapter {
         }else{
         holder.itemivorderTag.setImageDrawable(mContext.getResources().getDrawable(R.drawable.jie));
         }
-        final Map<String, String> finalMap = map;
+        final String objectId = map.get("objectId");
+
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, OrderDetailActivity.class);
-                intent.putExtra("OrderObjectId", finalMap.get("objectId"));
+                intent.putExtra("OrderObjectId", objectId);
                 mContext.startActivity(intent);
             }
         });

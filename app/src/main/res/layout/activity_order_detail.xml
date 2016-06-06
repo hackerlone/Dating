@@ -5,7 +5,7 @@
               android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@id/rl_login_title"
+        android:id="@+id/rl_login_title"
         android:layout_width="fill_parent"
         android:layout_height="50.0dip"
         android:background="@drawable/footbar_bg">
@@ -62,6 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_line"
+            android:text="距离未知"
             android:layout_centerHorizontal="true"
             android:textColor="@color/orange"
             android:textSize="@dimen/et_text_size_small"/>
@@ -84,7 +85,7 @@
                 android:layout_height="50.0dip"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                android:src="@drawable/touxiang01"
+                android:src="@drawable/white_circle"
                 android:clickable="true"/>
 
 
@@ -125,7 +126,7 @@
                 android:layout_height="50.0dip"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                android:src="@drawable/touxiang02"
+                android:src="@drawable/white_circle"
                 android:clickable="true"/>
 
 
@@ -143,6 +144,7 @@
                 <ImageView
                     android:id="@+id/iv_sex_right"
                     android:layout_width="wrap_content"
+
                     android:layout_height="15.0dip"/>
             </LinearLayout>
         </LinearLayout>
@@ -233,22 +235,7 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8.0dip">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="是否可以带闺蜜："/>
-
-        <TextView
-            android:id="@+id/tv_date_others"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -279,8 +266,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="50.0dip"
+            android:clickable="true"
             android:gravity="center"
-            android:onClick="call"
             android:orientation="horizontal"
             android:padding="5.0dip">
 
@@ -300,7 +287,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:onClick="sms"
+            android:clickable="true"
             android:orientation="horizontal"
             android:padding="5.0dip">
 

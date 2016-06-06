@@ -48,13 +48,15 @@ public class City_Select_Activity extends Activity {
      * 根据拼音来排列ListView里面的数据类
      */
     private PinyinComparator pinyinComparator;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_city);
-        mEditor = ((MyApplication)getApplication()).getEditor();
+        mEditor = ((MyApplication) getApplication()).getEditor();
         initViews();
     }
+
     private void initViews() {
         //实例化汉字转拼音类
         characterParser = CharacterParser.getInstance();
@@ -89,8 +91,7 @@ public class City_Select_Activity extends Activity {
                 //TODO 地点点击事件
                 Toast.makeText(City_Select_Activity.this, ((SortModel) adapter.getItem(position)).getName(), Toast.LENGTH_SHORT).show();
                 DataFragment.tv_city_name.setText(((SortModel) adapter.getItem(position)).getName());
-//                Filter_Activity.city.setText(((SortModel) adapter.getItem(position)).getName());
-
+                DataFragment.dataFrgmentProsenter.getAllUserByCity(((SortModel) adapter.getItem(position)).getName());
                 finish();
             }
         });
@@ -102,7 +103,6 @@ public class City_Select_Activity extends Activity {
         adapter = new SortAdapter(this, SourceDateList);
         sortListView.setAdapter(adapter);
 
-
         mClearEditText = (ClearEditText) findViewById(R.id.filter_edit);
 
         //根据输入框输入值的改变来过滤搜索
@@ -112,10 +112,12 @@ public class City_Select_Activity extends Activity {
                 //当输入框里面的值为空，更新为原来的列表，否则为过滤数据列表
                 filterData(s.toString());
             }
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count,
                                           int after) {
             }
+
             @Override
             public void afterTextChanged(Editable s) {
             }
@@ -176,7 +178,8 @@ public class City_Select_Activity extends Activity {
         Collections.sort(filterDateList, pinyinComparator);
         adapter.updateListView(filterDateList);
     }
-    public void back(View v){
+
+    public void back(View v) {
         finish();
     }
 }
