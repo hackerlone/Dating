@@ -3,6 +3,7 @@ package com.lone.wjm.dating.Model.impl;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.avos.avoscloud.AVCloudQueryResult;
 import com.avos.avoscloud.AVException;
@@ -106,17 +107,23 @@ public class IDataFragmentModelimpl implements IDataFragmentModel {
         };
         return null;
     }
+
     @Override
     public void sendYueDan(String yueDanId, String userId) {
-        AVQuery.doCloudQueryInBackground("update YueDan set TouserObjectId='"+userId+"',zhuangtai = '"+"已接受"+"' where objectId='"+yueDanId+"'", new CloudQueryCallback<AVCloudQueryResult>() {
-            @Override
-            public void done(AVCloudQueryResult avCloudQueryResult, AVException e) {
-                if(e == null){
-                    mIDataFragmentView.showToastMessage("抢单成功，去我的订单联系他(她)约会吧");
-                }else{
-                    mIDataFragmentView.showToastMessage("抢单失败，请检查网络连接");
+        Log.i("info", "sendYueDan: " + userId);
+        if (userId == "null" || userId.equals("null")) {//TODO 抢单
+            mIDataFragmentView.showToastMessage("请登录");
+        } else {
+            AVQuery.doCloudQueryInBackground("update YueDan set TouserObjectId='" + userId + "',zhuangtai = '" + "已接受" + "' where objectId='" + yueDanId + "'", new CloudQueryCallback<AVCloudQueryResult>() {
+                @Override
+                public void done(AVCloudQueryResult avCloudQueryResult, AVException e) {
+                    if (e == null) {
+                        mIDataFragmentView.showToastMessage("抢单成功，去我的约单联系他(她)约会吧");
+                    } else {
+                        mIDataFragmentView.showToastMessage("抢单失败，请检查网络连接");
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 }
