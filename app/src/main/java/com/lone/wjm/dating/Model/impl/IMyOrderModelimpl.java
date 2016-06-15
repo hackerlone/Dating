@@ -28,11 +28,9 @@ public class IMyOrderModelimpl implements IMyOrderModel {
     private IMyOrderView mIMyOrderView;
     private Handler mHandler;
     private List<Map<String, String>> list;
-
     public IMyOrderModelimpl(IMyOrderView mIMyOrderView) {
         this.mIMyOrderView = mIMyOrderView;
     }
-
     @Override
     public List<Map<String, String>> getYueDan(String objectId) {
         //TODO 获取我的约单信息

@@ -3,6 +3,7 @@ package com.lone.wjm.dating.Model.impl;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVMobilePhoneVerifyCallback;
@@ -32,7 +33,17 @@ public class IRegisterModelImpl implements IRegisterModel {
         this.mIRegisterView = mIRegisterView;
         user = new AVUser();
     }
-
+    //手机号码验证
+    private boolean checkPhoneNum(String phoneNum) {
+        String telRegex = "[1][3578]\\d{9}";
+        if (phoneNum.matches(telRegex)) {
+            phoneNumisChecked = true;
+        } else {
+            phoneNumisChecked = false;
+            mIRegisterView.showToastMessage("手机号码格式错误");
+        }
+        return phoneNumisChecked;
+    }
     @Override
     public boolean getCode(Map<String, String> userInfomap) {
         phoneNumisSend = false;
@@ -59,7 +70,7 @@ public class IRegisterModelImpl implements IRegisterModel {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                Register_Activity.getCode.setText(msg.what + "后重新获取");
+                Register_Activity.getCode.setText(msg.what + "s后重新获取");
                 Register_Activity.getCode.setEnabled(false);
                 if (msg.what == 0) {
                     Register_Activity.getCode.setText("获取验证码");
@@ -81,6 +92,7 @@ public class IRegisterModelImpl implements IRegisterModel {
             public void done(AVException e) {
                 if (e == null) {
                     mIRegisterView.showToastMessage("发送成功,请注意查收");
+                    Log.i("info", "done: 000000000000000000000000000000000");
                     phoneNumisSend = true;
                 } else {
                     mIRegisterView.showToastMessage("获取失败，请检查网络连接");
@@ -90,19 +102,6 @@ public class IRegisterModelImpl implements IRegisterModel {
             }
         });
     }
-
-    //手机号码验证
-    private boolean checkPhoneNum(String phoneNum) {
-        String telRegex = "[1][3578]\\d{9}";
-        if (phoneNum.matches(telRegex)) {
-            phoneNumisChecked = true;
-        } else {
-            phoneNumisChecked = false;
-            mIRegisterView.showToastMessage("手机号码格式错误");
-        }
-        return phoneNumisChecked;
-    }
-
     @Override
     public boolean register(final Map<String, String> userInfomap) {
         if (TextUtils.isEmpty(userInfomap.get("phoneNum")) || TextUtils.isEmpty(userInfomap.get("username")) || TextUtils.isEmpty(userInfomap.get("password")) || TextUtils.isEmpty(userInfomap.get("phoneCode"))) {
